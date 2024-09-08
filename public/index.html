@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+
+      }
+      .grp1{
+        visibility: hidden;
+     
+
+      }
+      .grp:hover .grp1{
+        visibility:visible;
+      }
+      .rotation{
+        animation: rotate 5s linear infinite;
+      }
+      @keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.nav{
+
+box-shadow: 1px 1px 1px 1px white;
+}
+
+.nav:hover{
+  background-color: white;
+  color:black;
+  box-shadow: 4px 4px 1px 1px black;
+}
+
+img{
+  box-shadow: 1px 2px 20px -1px rgba(32,32,36,1);
+}
+.audio:hover{
+  scale:1.4;
+}
+   
+    </style>
+    <title>React Tutorial</title>
+  </head>
+  <body>
+   
+    <div id="root"></div>
+
+  </body>
+</html>
