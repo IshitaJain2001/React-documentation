@@ -6,7 +6,7 @@ import tick from '../images/tick1.png'
 export default function Introduction({title,definition}) {
  const [option,setOption]= useState(null)
  const [unread1,setRead1]=useState(true)
-
+const [unread2, setRead2] = useState(true)
 
 
   switch(unread1){
@@ -16,9 +16,24 @@ export default function Introduction({title,definition}) {
         document.querySelector('.btnread').style.backgroundColor='green'
       document.querySelector('.locked').textContent="YOUR QUESTION UNLOCKED"
             document.querySelector('.hid').style.display= "inline"
+            document.querySelector('.lock1').style.display="none"
                    document.querySelector('.container1').style.width='450px'
                    document.querySelector('.ques1').style.display="block"
   }
+
+  
+  switch(unread2){
+
+    case false: 
+
+      document.querySelector('.btnread2').style.backgroundColor='green'
+    document.querySelector('.locked2').textContent="YOUR QUESTION UNLOCKED"
+          document.querySelector('.hid2').style.display= "inline"
+           document.querySelector('.lock2').style.display="none"
+                 document.querySelector('.container2').style.width='450px'
+                //  document.querySelector('.ques1').style.display="block"
+}
+
 
 switch(option){
   case 'opt1': document.querySelector(".option1").style.backgroundColor="green"
@@ -47,6 +62,7 @@ switch(option){
   return (
 
     <div className='w-[1000px]'>
+  
      <div className='flex mt-[100px] '> 
      <h1 className='text-[48px] font-bold  text-black-300 ml-[50px] mt-[30px] ' >Introduction To {title}</h1>
 <button className='text-[25px] mt-[40px] bg-gray-300 h-[50px] px-[10px] rounded-[20px] btnread ml-[100px] ' onClick={()=>setRead1(false)}>Module done </button>
@@ -76,7 +92,7 @@ Think of Library as a box , which provides all the tools to construct something 
     <p className='flex gap-5 mt-[20px] bg-yellow-300 w-[600px] pl-[37px] container1'>
 
    
-    <img src={lock} className="shadow-none h-[40px] lock1 " />
+    <img src={lock} className="shadow-none h-[40px] lock2 " />
   
   <p className='locked'>QUESTION STAYS LOCKED TILL YOU READ</p>
    
@@ -97,14 +113,31 @@ React is a library or a framework?
 
   <div>  
     
+
+  <div className='flex mt-[100px] font-normal'> 
+  <p  className='text-[36px] font-bold  text-black-300  mt-[30px]  '>Understanding DOM</p>
+<button className='text-[25px] mt-[20px] bg-gray-300 h-[50px] px-[10px] rounded-[20px] btnread2 ml-[100px]  text-black' onClick={()=>setRead2(false)}>Module done </button>
+  <img src={tick} className="h-[40px] shadow-none bg-white mt-[20px] hidden hid2" />
+  </div>
+
+
+
+
     
-  <p  className='text-[30px] font-bold  text-black-300  mt-[30px]  '>Understanding DOM</p>
-    <p className='  mt-[10px] leading-10 text-blue-800 text-[26px]  font-extralight'>
+
+    <p className='  mt-[20px] leading-10 text-blue-800 text-[26px]  font-extralight'>
 Interface which enables representation of structure of HTML as a tree of object, where each tag acts as node. Through DOM JS interacts with HTML content to dynamically update it.
     </p> 
  
    
-  
+    <p className='flex gap-5 mt-[20px] bg-yellow-300 w-[600px] pl-[37px] container2'>
+
+   
+<img src={lock} className="shadow-none h-[40px] lock1 " />
+
+<p className='locked2'>QUESTION STAYS LOCKED TILL YOU READ</p>
+
+</p>
 
   <p className=' mt-[30px] leading-10 text-blue-800 text-[26px]  font-medium'>Answer a question , before you proceed-: </p>
 <p className='  mt-[10px] leading-10 text-blue-800 text-[26px]  font-light'>
